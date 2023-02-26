@@ -1,9 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Code
+public class Shield : MonoBehaviour
 {
-    public class Shield : MonoBehaviour
-    {
         
-    }
 }

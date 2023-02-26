@@ -12,7 +12,8 @@ namespace StarterAssets
 		public Vector2 look;
 		public bool jump;
 		public bool sprint;
-
+		public Player.PlayerType playerType;
+		
 		[Header("Movement Settings")]
 		public bool analogMovement;
 
@@ -43,6 +44,11 @@ namespace StarterAssets
 		{
 			SprintInput(value.isPressed);
 		}
+
+		public void OnSwitchPlayer(InputValue value)
+		{
+			SwitchPlayersInput(value.isPressed);
+		}
 #endif
 
 
@@ -64,6 +70,18 @@ namespace StarterAssets
 		public void SprintInput(bool newSprintState)
 		{
 			sprint = newSprintState;
+		}
+
+		public void SwitchPlayersInput(bool newSwitchPlayerState)
+		{
+			if (playerType == Player.PlayerType.Winston)
+			{
+				playerType = Player.PlayerType.Ren;
+			}
+			else
+			{
+				playerType = Player.PlayerType.Winston;
+			}
 		}
 
 		private void OnApplicationFocus(bool hasFocus)
